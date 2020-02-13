@@ -1,6 +1,7 @@
 from django.shortcuts import render
+# from django.views.generic.base import View
 
 
 # Create your views here.
-def index(requset):
-    return render(requset, 'base.html')
+def index(request):
+    return render(request, "pages/index.html")

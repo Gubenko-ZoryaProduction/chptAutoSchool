@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "chpt-autoschool.herokuapp.com",
     "chpt-autoschool.com",
+    "127.0.0.1",
 ]
 
 # Application definition
@@ -59,7 +60,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
+            os.path.join(BASE_DIR, 'chptautoschool/../templates')
                  ]
         ,
         'APP_DIRS': True,
