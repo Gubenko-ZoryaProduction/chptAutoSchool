@@ -70,7 +70,7 @@ class ClassRoom(models.Model):
         verbose_name_plural = "Класи"
 
 
-class Teachers:
+class Teachers(models.Model):
     name = models.CharField(max_length=100)
     #image = models.ImageField()
 
