@@ -6,24 +6,24 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, "index.html")
+    return render(request, "pages/index.html")
 
 
 def courses(request):
-    return render(request, "courses.html")
+    return render(request, "pages/courses.html")
 
 
 def contacts(request):
-    return render(request, "contacts.html")
+    return render(request, "pages/contacts.html")
 
 
 def reviews(request):
-    return render(request, "reviews.html")
+    return render(request, "pages/reviews.html")
 
 
 def training(request):
-    return render(request, "training.html")
+    return render(request, "pages/training.html")
 
 
 def useful(request):
-    return render(request, "useful.html")
+    return render(request, "pages/useful.html")

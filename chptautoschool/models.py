@@ -4,9 +4,9 @@ from datetime import datetime
 
 class Respond(models.Model):
     """Відгуки"""
-    name = models.CharField("Ім'я", max_length=20)
-    email = models.CharField("E-mail", max_length=150, unique=True)
-    text = models.TextField("Текст відгуку")
+    name = models.CharField("Ім'я", max_length=20, help_text="Введіть ваше ім'я")
+    email = models.CharField("E-mail", max_length=150, unique=True, help_text="Введіть email")
+    text = models.TextField("Текст відгуку", help_text="Введіть текст відгуку")
     url = models.SlugField(max_length=160, unique=True)
 
     def __str__(self):
@@ -19,6 +19,7 @@ class Respond(models.Model):
 
 class Useful(models.Model):
     """Корисне"""
+    name = models.CharField(max_length=150)
     category = models.TextField()
     url = models.SlugField(max_length=160, unique=True)
 
