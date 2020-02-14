@@ -45,6 +45,10 @@ class DriversCourses(models.Model):
 class ContactPhone(models.Model):
     phone = models.CharField(max_length=12)
 
+    class Meta:
+        verbose_name = "Телефон"
+        verbose_name_plural = "Телефони"
+
     def __str__(self):
         return self.phone
 
@@ -55,8 +59,13 @@ class Contacts(models.Model):
     address = models.CharField(max_length=150)
     url = models.SlugField(max_length=160, unique=True)
 
+    class Meta:
+        verbose_name = "Контакт"
+        verbose_name_plural = "Контакти"
+
     def __str__(self):
         return self.name
+
 
 
 class BaseEducation(models.Model):
