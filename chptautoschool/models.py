@@ -54,24 +54,32 @@ class Contacts(models.Model):
 
 class BaseEducation(models.Model):
     """База навчання"""
-    name = "Технікум"
+    name = models.CharField(max_length=100, default="Технікум")
     url = models.SlugField(max_length=160, unique=True)
 
-    class ClassRoom:
-        name = models.CharField()
-        image = models.ImageField()
 
-        class Meta:
-            verbose_name = "Клас"
-            verbose_name_plural = "Класи"
-
-    class Teachers:
-        name = models.CharField()
-        image = models.ImageField()
-
-        class Meta:
-            verbose_name = "Викладач"
-            verbose_name_plural = "Викладачі"
+class ClassRoom(models.Model):
+    name = models.CharField()
+    image = models.ImageField()
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "Клас"
+        verbose_name_plural = "Класи"
+
+
+class Teachers:
+    name = models.CharField()
+    image = models.ImageField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Викладач"
+        verbose_name_plural = "Викладачі"
+
+
+
