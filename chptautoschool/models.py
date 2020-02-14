@@ -42,9 +42,16 @@ class DriversCourses(models.Model):
         return self.name
 
 
+class ContactPhone(models.Model):
+    phone = models.CharField(max_length=12)
+
+    def __str__(self):
+        return self.phone
+
+
 class Contacts(models.Model):
     """Контакти"""
-    contact_phone = models.SlugField(max_length=12)
+    contact_phone = models.ManyToManyField(ContactPhone, verbose_name="Контактний телефон")
     address = models.CharField(max_length=150)
     url = models.SlugField(max_length=160, unique=True)
 
@@ -60,7 +67,8 @@ class BaseEducation(models.Model):
 
 class ClassRoom(models.Model):
     name = models.CharField(max_length=100)
-    #image = models.ImageField()
+
+    # image = models.ImageField()
 
     def __str__(self):
         return self.name
@@ -72,7 +80,8 @@ class ClassRoom(models.Model):
 
 class Teachers(models.Model):
     name = models.CharField(max_length=100)
-    #image = models.ImageField()
+
+    # image = models.ImageField()
 
     def __str__(self):
         return self.name
@@ -80,6 +89,3 @@ class Teachers(models.Model):
     class Meta:
         verbose_name = "Викладач"
         verbose_name_plural = "Викладачі"
-
-
-

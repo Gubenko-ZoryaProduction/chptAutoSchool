@@ -8,4 +8,5 @@ admin.site.register(Contacts)
 admin.site.register(BaseEducation)
 admin.site.register(ClassRoom)
 admin.site.register(Teachers)
+admin.site.register(ContactPhone)
 
